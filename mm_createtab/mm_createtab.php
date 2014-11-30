@@ -1,7 +1,7 @@
 <?php
 /**
  * mm_createTab
- * @version 1.1 (2012-11-13)
+ * @version 1.1.1 (2014-12-01)
  * 
  * @desc A widget for ManagerManager plugin that allows create a new custom tab within the document editing page.
  * 
@@ -17,9 +17,9 @@
  * @event OnDocFormRender
  * @event OnPluginFormRender
  * 
- * @link http://code.divandesign.biz/modx/mm_createtab/1.1
+ * @link http://code.divandesign.biz/modx/mm_createtab/1.1.1
  * 
- * @copyright 2012
+ * @copyright 2014
  */
 
 function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $width = '680'){
@@ -31,7 +31,7 @@ function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $wi
 		// Plugin page tabs use a differen name for the tab object
 		$js_tab_object = ($e->name == 'OnPluginFormRender') ? 'tpSnippet' : 'tpSettings';
 		
-		$output = "//  -------------- mm_createTab :: Begin ------------- \n";
+		$output = "//---------- mm_createTab :: Begin -----\n";
 		
 		$tabId = prepareTabId($id);
 		
@@ -45,15 +45,16 @@ function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $wi
 		';
 		
 		// Clean up for js output
-		$empty_tab = str_replace( array("\n", "\t", "\r") , '', $empty_tab);
+		$empty_tab = str_replace(array("\n", "\t", "\r"), '', $empty_tab);
+		
 		$output .= '$j';
 		$output .= "('div#' + mm_lastTab).after('".$empty_tab."');\n";
 		$output .= "mm_lastTab = '".$tabId."';\n";
-		$output .= $js_tab_object.'.addTabPage(document.getElementById("'.$tabId.'"));';
+		$output .= $js_tab_object.'.addTabPage(document.getElementById("'.$tabId.'"));'."\n";
 		
-		$output .= "//  -------------- mm_createTab :: End ------------- \n";
+		$output .= "//---------- mm_createTab :: End -----\n";
 		
-		$e->output($output."\n");
+		$e->output($output);
 	}
 }
 ?>
