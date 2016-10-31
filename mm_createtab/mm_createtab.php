@@ -12,7 +12,7 @@
  * @param $roles {comma separated string} - The roles that the widget is applied to (when this parameter is empty then widget is applied to the all roles). Default: ''.
  * @param $templates {comma separated string} - Templates IDs for which the widget is applying (empty value means the widget is applying to all templates). Default: ''.
  * @param $intro {string} - HTML text which appears at the top of the new tab. Default: ''.
- * @param $width {string} - New width for the content within the tab. If no units are included, they will be assumed to be pixels e.g. '100%' or '450px'. Default: '680'.
+ * @param $width {string} - New width for the content within the tab. If no units are included, they will be assumed to be pixels e.g. '100%' or '450px'. Default: '100%'.
  * 
  * @event OnDocFormRender
  * @event OnPluginFormRender
@@ -22,7 +22,7 @@
  * @copyright 2014
  */
 
-function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $width = '680'){
+function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $width = '100%'){
 	global $modx;
 	$e = &$modx->Event;
 	
