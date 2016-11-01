@@ -1,7 +1,7 @@
 <?php
 /**
  * mm_createTab
- * @version 1.1.1 (2014-12-01)
+ * @version 1.1.2 (2016-11-01)
  * 
  * @desc A widget for ManagerManager plugin that allows create a new custom tab within the document editing page.
  * 
@@ -9,17 +9,17 @@
  * 
  * @param $name {string} — The display name of the new tab. @required
  * @param $id {string} — A unique ID for this tab, so you can reference it later on, if you need to. @required
- * @param $roles {comma separated string} — The roles that the widget is applied to (when this parameter is empty then widget is applied to the all roles). Default: ''.
- * @param $templates {comma separated string} — Templates IDs for which the widget is applying (empty value means the widget is applying to all templates). Default: ''.
- * @param $intro {string} — HTML text which appears at the top of the new tab. Default: ''.
+ * @param $roles {string_commaSeparated} — The roles that the widget is applied to (when this parameter is empty then widget is applied to the all roles). Default: ''.
+ * @param $templates {string_commaSeparated} — Templates IDs for which the widget is applying (empty value means the widget is applying to all templates). Default: ''.
+ * @param $intro {string_html} — HTML text which appears at the top of the new tab. Default: ''.
  * @param $width {string} — New width for the content within the tab. If no units are included, they will be assumed to be pixels e.g. '100%' or '450px'. Default: '100%'.
  * 
  * @event OnDocFormRender
  * @event OnPluginFormRender
  * 
- * @link http://code.divandesign.biz/modx/mm_createtab/1.1.1
+ * @link http://code.divandesign.biz/modx/mm_createtab/1.1.2
  * 
- * @copyright 2014
+ * @copyright 2012–2016
  */
 
 function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $width = '100%'){
