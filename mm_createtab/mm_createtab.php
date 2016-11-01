@@ -35,13 +35,13 @@ function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $wi
 		useThisRule($roles, $templates)
 	){
 		// Plugin page tabs use a differen name for the tab object
-		$js_tab_object = ($e->name == 'OnPluginFormRender') ? 'tpSnippet' : 'tpSettings';
+		$jsTabObject = ($e->name == 'OnPluginFormRender') ? 'tpSnippet' : 'tpSettings';
 		
 		$output = '//---------- mm_createTab :: Begin -----'.PHP_EOL;
 		
 		$tabId = prepareTabId($id);
 		
-		$empty_tab = '
+		$emptyTab = '
 <div class="tab-page" id="'.$tabId.'">
 	<h2 class="tab">'.$name.'</h2>
 	<div class="tabIntro" id="tab-intro-'.$id.'">'.$intro.'</div>
@@ -51,11 +51,11 @@ function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $wi
 		';
 		
 		// Clean up for js output
-		$empty_tab = ddTools::escapeForJS($empty_tab);
+		$emptyTab = ddTools::escapeForJS($emptyTab);
 		
-		$output .= '$j("div#" + mm_lastTab).after("'.$empty_tab.'");'.PHP_EOL;
+		$output .= '$j("div#" + mm_lastTab).after("'.$emptyTab.'");'.PHP_EOL;
 		$output .= 'mm_lastTab = "'.$tabId.'";'.PHP_EOL;
-		$output .= $js_tab_object.'.addTabPage(document.getElementById("'.$tabId.'"));'.PHP_EOL;
+		$output .= $jsTabObject.'.addTabPage(document.getElementById("'.$tabId.'"));'.PHP_EOL;
 		
 		$output .= '//---------- mm_createTab :: End -----'.PHP_EOL;
 		
