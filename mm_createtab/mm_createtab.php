@@ -5,7 +5,7 @@
  * 
  * @desc A widget for ManagerManager plugin that allows create a new custom tab within the document editing page.
  * 
- * @uses ManagerManager plugin 0.6.2.
+ * @uses MODXEvo.plugin.ManagerManager >= 0.7.
  * 
  * @param $name {string} — The display name of the new tab. @required
  * @param $id {string} — A unique ID for this tab, so you can reference it later on, if you need to. @required
@@ -51,9 +51,9 @@ function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $wi
 		';
 		
 		// Clean up for js output
-		$empty_tab = str_replace(array("\n", "\t", "\r"), '', $empty_tab);
+		$empty_tab = ddTools::escapeForJS($empty_tab);
 		
-		$output .= '$j("div#" + mm_lastTab).after(\''.$empty_tab.'\');'.PHP_EOL;
+		$output .= '$j("div#" + mm_lastTab).after("'.$empty_tab.'");'.PHP_EOL;
 		$output .= 'mm_lastTab = "'.$tabId.'";'.PHP_EOL;
 		$output .= $js_tab_object.'.addTabPage(document.getElementById("'.$tabId.'"));'.PHP_EOL;
 		
