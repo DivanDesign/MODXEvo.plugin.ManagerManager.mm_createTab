@@ -7,7 +7,7 @@
  * 
  * @uses MODXEvo.plugin.ManagerManager >= 0.7.
  * 
- * @param $name {string} — The display name of the new tab. @required
+ * @param $title {string} — The display name of the new tab. @required
  * @param $id {string} — A unique ID for this tab, so you can reference it later on, if you need to. @required
  * @param $roles {string_commaSeparated} — The roles that the widget is applied to (when this parameter is empty then widget is applied to the all roles). Default: ''.
  * @param $templates {string_commaSeparated} — Templates IDs for which the widget is applying (empty value means the widget is applying to all templates). Default: ''.
@@ -22,7 +22,7 @@
  * @copyright 2012–2016
  */
 
-function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $width = '100%'){
+function mm_createTab($title, $id, $roles = '', $templates = '', $intro = '', $width = '100%'){
 	global $modx;
 	$e = &$modx->Event;
 	
@@ -43,7 +43,7 @@ function mm_createTab($name, $id, $roles = '', $templates = '', $intro = '', $wi
 		
 		$emptyTab = '
 <div class="tab-page" id="'.$tabId.'">
-	<h2 class="tab">'.$name.'</h2>
+	<h2 class="tab">'.$title.'</h2>
 	<div class="tabIntro" id="tab-intro-'.$id.'">'.$intro.'</div>
 	<table width="'.$width.'" border="0" cellspacing="0" cellpadding="0" id="table-'.$id.'">
 	</table>
