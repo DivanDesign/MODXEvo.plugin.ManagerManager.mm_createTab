@@ -1,7 +1,7 @@
 <?php
 /**
  * mm_createTab
- * @version 1.1.2 (2016-11-01)
+ * @version 1.2 (2016-11-29)
  * 
  * @desc A widget for ManagerManager plugin that allows create a new custom tab within the document editing page.
  * 
@@ -19,7 +19,7 @@
  * @event OnDocFormRender
  * @event OnPluginFormRender
  * 
- * @link http://code.divandesign.biz/modx/mm_createtab/1.1.2
+ * @link http://code.divandesign.biz/modx/mm_createtab/1.2
  * 
  * @copyright 2012–2016
  */
